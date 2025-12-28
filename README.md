@@ -78,7 +78,6 @@ NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, YOLO, OpenCV
 
 - 💼 LinkedIn: https://linkedin.com/in/rishabh-shah1  
 - 🌐 Portfolio: https://rishabhshah.vercel.app/  
-- 📧 Email: rishabhshah203@gmail.com
 
 <!--
 **RishiiShah/RishiiShah** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
