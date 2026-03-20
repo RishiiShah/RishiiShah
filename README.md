@@ -1,68 +1,87 @@
-## Hi, I’m Rishabh Shah 👋
+# 👋 Hi, I’m Rishabh Shah
 
-I’m a Master’s student in Computer Science at **Rutgers University – New Brunswick**, with a strong foundation in software engineering and systems-focused development. I enjoy building reliable, scalable systems and applying solid engineering principles to real-world problems.
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Inter&size=22&duration=3000&color=FFFFFF&width=500&lines=Software+Engineer;Backend+%26+Systems+Focused;Building+Scalable+Production+Systems)
 
-🎯 **Actively seeking Software Engineer / Software Developer roles**  
-🔍 Secondary interests: Systems Engineering & Architecture  
-🤖 Also exploring: Artificial Intelligence, Machine Learning, and Data Science
+💻 Software Engineer focused on **backend development, APIs, and scalable systems**  
+🎓 MS in Computer Science @ Rutgers University – New Brunswick  
 
----
+I build **production-ready software systems** with an emphasis on performance, reliability, and clean architecture.
 
-## 🎓 Education
+🎯 **Actively seeking Software Engineer roles (Internship / Full-time)**  
 
-- **M.S. in Computer Science**, Rutgers University – New Brunswick  
-  *Relevant coursework:* Data Structures & Algorithms, Operating Systems, Introduction to AI  
-
-- **B.Tech in AI & Data Science**, University of Mumbai  
-  Honors in Computational Biology  
+![Profile Views](https://komarev.com/ghpvc/?username=RishiiShah&style=flat&color=blue)
+![GitHub followers](https://img.shields.io/github/followers/RishiiShah?style=flat)
 
 ---
 
-## 🛠 Technical Skills
+## 🧠 Engineering Focus
 
-### **Languages**
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=c%2B%2B&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white)
-
-### **Backend & Full-Stack**
-FastAPI, Django, Flask, Next.js, REST APIs, Microservices, JWT Authentication
-
-### **Databases**
-PostgreSQL, MySQL, MongoDB — schema design, query optimization, data modeling
-
-### **Cloud & Systems**
-AWS (EC2, S3, Lambda), Docker, GitHub Actions, Linux/Unix, CI/CD, System Monitoring
-
-### **AI / ML**
-NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, YOLO, OpenCV
+- 🛠 Building **production-grade backend systems and APIs**
+- ⚙️ Designing **scalable, maintainable software architectures**
+- 📈 Improving **performance, reliability, and system efficiency**
+- 🧩 Applying strong **CS fundamentals (DSA, OS, Systems)** in real-world applications
 
 ---
 
-## 📌 Selected Projects
+## 🛠 Tech Stack
 
-- **Traffic Violation Detection & Automated Ticketing System**  
-  Built a YOLO-based computer vision pipeline detecting multiple traffic violations with high accuracy. Automated challan generation and SMS delivery using AWS and Twilio, significantly reducing manual workload.  
-  *Tech:* Python, YOLO, AWS, OCR
+**Languages:** Python • C++ • Java • SQL • C  
+**Backend:** FastAPI • Django • Flask • REST APIs • Microservices • JWT Auth  
+**Databases:** PostgreSQL • MySQL • MongoDB  
+**Cloud & Systems:** AWS • Docker • Linux/Unix • CI/CD (GitHub Actions)  
 
-- **JARVIS: Voice Assistant with Smart Home Automation**  
-  Designed a full-stack IoT system with voice and web control, integrating LLMs for natural interaction and achieving low-latency responses with asynchronous APIs.  
-  *Tech:* Django, Azure IoT Hub, Raspberry Pi, LLM APIs
-
-- **Music Genre Detection (ML Pipeline)**  
-  Implemented a Bi-LSTM–based audio classification pipeline with optimized preprocessing and deployment-ready inference APIs.  
-  *Tech:* Python, Librosa, Deep Learning
+**Applied ML (supporting systems):**  
+PyTorch • TensorFlow • Scikit-learn • YOLO • OpenCV  
 
 ---
 
-## 🌱 Interests & Focus Areas
+## 🚀 Featured Work
 
-- Backend and systems-oriented software engineering  
-- Performance optimization and scalable architectures  
-- Operating systems, distributed systems, and cloud-native design  
-- Applying machine learning to real-world engineering problems
+### 🚦 Traffic Violation Detection & Automated Ticketing
+Built an **end-to-end production-style system** combining computer vision, backend services, and cloud infrastructure.
+
+- Designed backend workflows for violation processing and automated ticket generation  
+- Integrated AWS (S3) and Twilio for storage and real-time notifications  
+- Handled real-time detection pipeline with high-accuracy CV models  
+
+→ Focus: **backend engineering + system integration**
+
+---
+
+### 🤖 JARVIS – Voice Assistant with Smart Home Automation
+Developed a **full-stack software system** enabling voice-controlled IoT automation.
+
+- Built backend services for command processing and device orchestration  
+- Integrated LLM APIs with structured request handling  
+- Designed asynchronous flows for low-latency responses  
+
+→ Focus: **API design + real-time systems**
+
+---
+
+### 📊 Synthetic Financial Data Generation (ML Pipeline)
+Engineered a **data + ML pipeline** for generating realistic financial time series.
+
+- Built deep learning pipeline for synthetic data generation  
+- Improved downstream model performance using augmented datasets  
+
+→ Focus: **ML applied within software systems**
+
+---
+
+## 💼 Experience Snapshot
+
+- Built and deployed **backend services** in production environments  
+- Developed **secure REST APIs** with authentication and role-based access control  
+- Improved system performance through **query optimization and efficient design**  
+- Containerized and deployed services using **Docker + AWS + CI/CD pipelines**  
+
+---
+
+## 🔭 Currently Building
+
+- Scalable backend systems using FastAPI + AWS  
+- Improving system design fundamentals for large-scale systems  
 
 ---
 
@@ -76,20 +95,9 @@ NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, YOLO, OpenCV
 
 ## 📫 Let’s Connect
 
-- 💼 LinkedIn: https://linkedin.com/in/rishabh-shah1  
-- 🌐 Portfolio: https://rishabhshah.vercel.app/  
+💼 LinkedIn: https://linkedin.com/in/rishabh-shah1  
+🌐 Portfolio: https://rishabhshah.vercel.app/  
 
-<!--
-**RishiiShah/RishiiShah** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+---
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+⭐️ *Open to software engineering opportunities and interesting backend/system problems.*
