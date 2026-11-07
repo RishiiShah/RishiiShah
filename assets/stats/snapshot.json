@@ -314,7 +314,7 @@
     "2026-11-04": 3,
     "2026-11-05": 1,
     "2026-11-06": 3,
-    "2026-11-07": 0
+    "2026-11-07": 2
   },
   "repositories": [
     {
@@ -440,8 +440,11 @@
     },
     {
       "name": "RishiiShah",
-      "primary_language": null,
-      "language_bytes": {}
+      "primary_language": "Python",
+      "language_bytes": {
+        "Python": 16027,
+        "Swift": 5443
+      }
     },
     {
       "name": "RishiiShah.github.io",
