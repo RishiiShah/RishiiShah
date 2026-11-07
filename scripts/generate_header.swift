@@ -5,7 +5,7 @@ import UniformTypeIdentifiers
 
 let width = 1000
 let height = 300
-let frameCount = 20
+let frameCount = 48
 let output = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("assets")
 guard let illustration = NSImage(contentsOf: output.appendingPathComponent("illustration.png")) else {
     fatalError("Run from the repository root with assets/illustration.png present")
@@ -14,7 +14,7 @@ let background = NSColor(srgbRed: 0.055, green: 0.067, blue: 0.086, alpha: 1)
 let ink = NSColor(srgbRed: 0.92, green: 0.93, blue: 0.91, alpha: 1)
 let muted = NSColor(srgbRed: 0.55, green: 0.60, blue: 0.65, alpha: 1)
 let accent = NSColor(srgbRed: 0.93, green: 0.47, blue: 0.34, alpha: 1)
-let glyphs = Array("01/{}[]<>:+*#")
+
 
 func render(_ frame: Int) -> CGImage {
     let bitmap = NSBitmapImageRep(
@@ -45,13 +45,16 @@ func render(_ frame: Int) -> CGImage {
     rect(42, 62, 550, 1, muted.withAlphaComponent(0.22))
     text("~/Rishi", 42, 26, 14, muted)
     for (index, character) in "Rishi".enumerated() {
-        let settled = frame >= index + 3
-        let value = settled ? character : glyphs[(frame * 3 + index * 7) % glyphs.count]
-        text(String(value), 40 + CGFloat(index) * 43, 86, 72,
-             settled ? ink : muted.withAlphaComponent(0.45), bold: true)
+        let progress = min(1.0, max(0.0, (Double(frame) - Double(index) * 3) / 18))
+        let eased = 1 - pow(1 - progress, 3)
+        let y = 86 + CGFloat(1 - eased) * 26
+        text(String(character), 40 + CGFloat(index) * 43, y, 72,
+             ink.withAlphaComponent(CGFloat(eased)), bold: true)
+
     }
     text("backend / developer tools / applied AI", 43, 167, 17, muted)
-    rect(43, 211, 34, 3, accent)
+    let lineProgress = min(1.0, Double(frame) / 30)
+    rect(43, 211, 34 + CGFloat(lineProgress) * 176, 3, accent)
     text("Rutgers University", 43, 248, 13, ink)
     text("New Brunswick, NJ", 243, 248, 13, muted)
 
@@ -59,7 +62,7 @@ func render(_ frame: Int) -> CGImage {
 }
 
 try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
-let gifURL = output.appendingPathComponent("rishi-name-decode.gif")
+let gifURL = output.appendingPathComponent("rishi-name-reveal.gif")
 let pngURL = output.appendingPathComponent("rishi-header-still.png")
 guard let gif = CGImageDestinationCreateWithURL(gifURL as CFURL, UTType.gif.identifier as CFString, frameCount, nil),
       let png = CGImageDestinationCreateWithURL(pngURL as CFURL, UTType.png.identifier as CFString, 1, nil) else {
@@ -68,7 +71,7 @@ guard let gif = CGImageDestinationCreateWithURL(gifURL as CFURL, UTType.gif.iden
 CGImageDestinationSetProperties(gif, [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFLoopCount: 0]] as CFDictionary)
 for frame in 0..<frameCount {
     let image = render(frame)
-    let delay = frame == frameCount - 1 ? 4.0 : 0.1
+    let delay = frame == frameCount - 1 ? 4.0 : 0.04
     CGImageDestinationAddImage(gif, image, [
         kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFDelayTime: delay]
     ] as CFDictionary)

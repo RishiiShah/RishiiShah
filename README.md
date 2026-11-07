@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/rishi-header-still.png" />
-  <img src="assets/rishi-name-decode.gif" width="100%" alt="Scrambled characters resolve into Rishi on an illustrated banner about backend engineering, developer tools, and applied AI." />
+  <img src="assets/rishi-name-reveal.gif" width="100%" alt="The letters of Rishi smoothly rise into place on an illustrated banner about backend engineering, developer tools, and applied AI." />
 </picture>
 
 # Hey, I'm Rishi.
@@ -143,23 +143,17 @@ I enjoy talking through a design and questioning whether it needs to be as compl
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/stats/activity-compact-dark.svg" />
   <source media="(max-width: 600px)" srcset="assets/stats/activity-compact-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats/activity-dark.svg" />
-  <img src="assets/stats/activity-light.svg" width="100%" alt="Rishi's year-to-date profile contributions by month and count of public repositories, excluding forks." />
+  <img src="assets/stats/activity-light.svg" width="100%" alt="Year-to-date GitHub stats: profile contributions, public indexed commits, pull requests opened, and how many of those pull requests have merged." />
 </picture>
-
-<div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats/languages-repos-dark.svg" />
-  <img src="assets/stats/languages-repos-light.svg" width="420" alt="Public repositories grouped by their main language. Counts add up to the repository total above." />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats/languages-bytes-dark.svg" />
-  <img src="assets/stats/languages-bytes-light.svg" width="420" alt="Language share by code bytes across the same public repositories. Percentages add up to 100 percent." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/stats/language-mix-compact-dark.svg" />
+  <source media="(max-width: 600px)" srcset="assets/stats/language-mix-compact-light.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats/language-mix-dark.svg" />
+  <img src="assets/stats/language-mix-light.svg" width="100%" alt="Language mix by code bytes across my public repositories, excluding forks. Larger repositories carry more weight." />
 </picture>
 
-</div>
-
-Profile activity is year to date. Both language charts use the same public repositories, excluding forks: one counts repositories by their main language, while the other measures the share of code bytes.
+<sub>Refreshed daily; each card shows its data date. Contributions follow GitHub’s profile calendar, including private counts when visible. Commits are public indexed commits by committer date; PRs were opened during the displayed period, with merged PRs a subset of those. These totals use different scopes and should not be added together.</sub>
 
 ## Get in touch
 

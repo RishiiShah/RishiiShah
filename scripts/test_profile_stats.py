@@ -1,7 +1,10 @@
 import unittest
 from datetime import date
+import json
+from unittest.mock import patch
+from urllib.parse import parse_qs, urlparse
 
-from generate_stats import Calendar, percentages, summarize, top_rows
+from generate_stats import Calendar, percentages, summarize, collect_metrics, overview, language_mix
 
 
 class ProfileStatsTests(unittest.TestCase):
@@ -36,11 +39,45 @@ class ProfileStatsTests(unittest.TestCase):
         self.assertEqual(dict(languages), {'Python': 20, 'HTML': 3})
         self.assertEqual(sum(primary.values()), len(snapshot['repositories']))
 
-    def test_language_rollup_and_rounding_preserve_totals(self):
-        languages = {str(i): i + 1 for i in range(12)}
-        rows = top_rows(languages)
-        self.assertEqual(len(rows), 8)
-        self.assertEqual(sum(value for _, value in rows), sum(languages.values()))
+    def test_metrics_are_public_and_use_explicit_date_windows(self):
+        payloads = [json.dumps({'total_count': n, 'incomplete_results': False}) for n in (12, 5, 3)]
+        with patch('generate_stats.fetch', side_effect=payloads) as fetch:
+            result = collect_metrics(date(2026, 1, 1), date(2026, 11, 7))
+        self.assertEqual(result, {'commits': 12, 'prs': 5, 'merged_prs': 3})
+        queries = [parse_qs(urlparse(call.args[0]).query)['q'][0] for call in fetch.call_args_list]
+        self.assertTrue(all('is:public' in q for q in queries))
+        self.assertIn('committer-date:2026-01-01..2026-11-07', queries[0])
+        self.assertIn('created:2026-01-01..2026-11-07', queries[2])
+        self.assertIn('is:merged', queries[2])
+
+    def test_invalid_metrics_fail_instead_of_publishing_misleading_counts(self):
+        for payload in ({'total_count': 10, 'incomplete_results': True},
+                        {'total_count': -1, 'incomplete_results': False},
+                        {'total_count': True, 'incomplete_results': False}, {}):
+            with patch('generate_stats.fetch', return_value=json.dumps(payload)):
+                with self.assertRaises(ValueError):
+                    collect_metrics(date(2026, 1, 1), date(2026, 1, 2))
+        payloads = [json.dumps({'total_count': n, 'incomplete_results': False}) for n in (12, 2, 3)]
+        with patch('generate_stats.fetch', side_effect=payloads):
+            with self.assertRaises(ValueError):
+                collect_metrics(date(2026, 1, 1), date(2026, 1, 2))
+
+    def test_cards_render_empty_data_long_labels_and_both_layouts(self):
+        import xml.etree.ElementTree as ET
+        snapshot = {'date': '2026-01-01', 'start': '2026-01-01',
+                    'contributions': {'2026-01-01': 0}, 'repositories': [],
+                    'metrics': {'commits': 0, 'prs': 0, 'merged_prs': 0}}
+        for mode in ('dark', 'light'):
+            for compact in (False, True):
+                for counter in ({}, {'Jupyter Notebook': 20, 'C++': 8, 'A&B': 2}):
+                    for image in (overview(snapshot, mode, compact),
+                                  language_mix(snapshot, counter, mode, compact)):
+                        ET.fromstring(image)
+                        self.assertNotIn('nan', image)
+                self.assertIn('No language data', language_mix(snapshot, {}, mode, compact))
+        self.assertIn('1,234', overview({**snapshot, 'metrics': {**snapshot['metrics'], 'commits': 1234}}, 'dark'))
+
+    def test_percentage_rounding_preserves_totals(self):
         self.assertEqual(sum(percentages([1, 1, 1])), 1000)
         self.assertEqual(percentages([0, 0]), [0, 0])
 
