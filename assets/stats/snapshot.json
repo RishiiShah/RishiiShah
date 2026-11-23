@@ -1,6 +1,6 @@
 {
   "username": "RishiiShah",
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "start": "2026-01-01",
   "scope": "Public repositories owned by RishiiShah, excluding forks. Profile calendar counts include all activity GitHub makes visible.",
   "contributions": {
@@ -329,7 +329,8 @@
     "2026-11-19": 0,
     "2026-11-20": 0,
     "2026-11-21": 0,
-    "2026-11-22": 0
+    "2026-11-22": 1,
+    "2026-11-23": 8
   },
   "repositories": [
     {
@@ -421,6 +422,15 @@
       }
     },
     {
+      "name": "Kiroween",
+      "primary_language": "TypeScript",
+      "language_bytes": {
+        "TypeScript": 298401,
+        "CSS": 65341,
+        "HTML": 694
+      }
+    },
+    {
       "name": "movie-recommendation-system",
       "primary_language": "Jupyter Notebook",
       "language_bytes": {
@@ -448,9 +458,10 @@
       "name": "Programming-Finance",
       "primary_language": "JavaScript",
       "language_bytes": {
-        "JavaScript": 161068,
-        "CSS": 8504,
-        "HTML": 2298
+        "JavaScript": 382653,
+        "CSS": 13915,
+        "Python": 4084,
+        "HTML": 2488
       }
     },
     {
@@ -486,7 +497,7 @@
     }
   ],
   "metrics": {
-    "commits": 867,
+    "commits": 873,
     "prs": 106,
     "merged_prs": 87
   },
