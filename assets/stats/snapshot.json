@@ -1,6 +1,6 @@
 {
   "username": "RishiiShah",
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "start": "2026-01-01",
   "scope": "Public repositories owned by RishiiShah, excluding forks. Profile calendar counts include all activity GitHub makes visible.",
   "contributions": {
@@ -331,11 +331,21 @@
     "2026-11-21": 0,
     "2026-11-22": 1,
     "2026-11-23": 13,
-    "2026-11-24": 13,
-    "2026-11-25": 0,
-    "2026-11-26": 2
+    "2026-11-24": 22,
+    "2026-11-25": 15,
+    "2026-11-26": 23,
+    "2026-11-27": 11
   },
   "repositories": [
+    {
+      "name": "BIC-Project",
+      "primary_language": "Jupyter Notebook",
+      "language_bytes": {
+        "Jupyter Notebook": 1067875,
+        "Python": 161451,
+        "Makefile": 1257
+      }
+    },
     {
       "name": "Cerevia",
       "primary_language": "Python",
@@ -394,6 +404,15 @@
         "HTML": 106252,
         "CSS": 38641,
         "JavaScript": 4396
+      }
+    },
+    {
+      "name": "DevCode",
+      "primary_language": "Rust",
+      "language_bytes": {
+        "Rust": 1017809,
+        "Shell": 1751,
+        "Ruby": 769
       }
     },
     {
@@ -501,9 +520,9 @@
     }
   ],
   "metrics": {
-    "commits": 878,
-    "prs": 106,
-    "merged_prs": 87
+    "commits": 944,
+    "prs": 110,
+    "merged_prs": 91
   },
   "metrics_scope": "Public indexed commits by committer date; PRs created in the period, with merged PRs a subset of those PRs."
 }
